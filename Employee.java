@@ -1,92 +1,63 @@
 public class Employee {
 
-    private String FIO;
-    private int Department;
-    private float Salary;
-    private static int Counter;
-    private int Id;
+    private String name;
+    private String lastName;
+    private String middleName;
+    private int department;
+    private int salary;
+    private static int counter = 0;
+    private Integer id;
 
 
     public int getId() {
-        return this.Id;
+        return this.id;
     }
 
-    public String getFIO() {
-        return this.FIO;
+    public String getName() {
+        return this.name;
+    }
+    public String getLastName(){
+        return this.lastName;
+    }
+    public String getMiddleName(){
+        return this.middleName;
     }
 
     public int getDepartment() {
-        return this.Department;
+        return this.department;
     }
 
     public float getSalary() {
-        return this.Salary;
+        return this.salary;
     }
 
 
-    public void SetFIO(String fio) {
-        this.FIO = fio;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void SetDepartment(int dept) {
-        this.Department = dept;
+    public void setDepartment(int dept) {
+        this.department = dept;
     }
 
-    public void SetSalary(float sal) {
-        this.Salary = sal;
+    public void setSalary(int sal) {
+        this.salary = sal;
     }
 
 
     public Employee(String fio, int dept, float salary) {
-        FIO = fio;
-        Department = dept;
-        Salary = salary;
-        Id = ++Counter;
+        fio = fio;
+        department = dept;
+        salary = salary;
+        id = ++counter;
     }
 
     @Override
     public String toString() {
-        return "Id: " + Id + " Fio: " + FIO + " Dept: " + Department + " Salary: " + Salary;
+        return "Id: " + id + " Name " + name + " LastName " + lastName + " MiddleName " + middleName + " Dept: " + department + " Salary: " + salary;
     }
 
-    public static void main(String[] args) {
-        Employee[] empl = new Employee[5];
-        empl[0] = new Employee("Иванов Иван Иванович", 1, 25500f);
-        empl[1] = new Employee("Петров Петр Петрович", 2, 31450f);
-        empl[2] = new Employee("Сидоров Сидор Сидорович", 3, 40200f);
-        empl[3] = new Employee("Егоров Егор Егорович", 4, 50400f);
-        empl[4] = new Employee("Павлов Павел Павлович", 5, 12000f);
 
-        for (Employee e : empl) {
-            System.out.println(e);
-        }
-    }
-
-    public static double minOfSalary(Employee[] arr) {
-        double min = maxOfSalary(arr);
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != null) {
-                if (min > arr[i].getSalary()) {
-                    min = arr[i].getSalary();
-                }
-            } else break;
-        }
-        return min;
-
-
-    }
-
-    public static double maxOfSalary(Employee[] arr) {
-        double max = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != null) {
-                if (max < arr[i].getSalary()) {
-                    max = arr[i].getSalary();
-                }
-            } else break;
-        }
-        return max;
-    }
 
 
 }
