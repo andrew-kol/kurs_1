@@ -45,19 +45,30 @@ public class Employee {
     }
 
 
-    public Employee(String fio, int dept, float salary) {
-        fio = fio;
+    public Employee(String name, String lastName, String middleName, int dept, float salary) {
+        name = name;
+        lastName = lastName;
+        middleName = middleName;
         department = dept;
         salary = salary;
         id = ++counter;
     }
 
+   // @Override
+   // public String toString() {
+      //  return "Id: " + id + " Name " + name + " LastName " + lastName + " MiddleName " + middleName + " Dept: " + department + " Salary: " + salary;
+    //}
+
     @Override
     public String toString() {
-        return "Id: " + id + " Name " + name + " LastName " + lastName + " MiddleName " + middleName + " Dept: " + department + " Salary: " + salary;
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                '}';
     }
-
-
 
 
 }

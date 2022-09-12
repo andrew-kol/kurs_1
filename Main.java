@@ -2,15 +2,20 @@ public class Main {
 
     public static void main(String[] args) {
         Employee[] empl = new Employee[5];
-        empl[0] = new Employee("Иванов Иван Иванович", 1, 25500f);
-        empl[1] = new Employee("Петров Петр Петрович", 2, 31450f);
-        empl[2] = new Employee("Сидоров Сидор Сидорович", 3, 40200f);
-        empl[3] = new Employee("Егоров Егор Егорович", 4, 50400f);
-        empl[4] = new Employee("Павлов Павел Павлович", 5, 12000f);
+        empl[0] = new Employee("Иван", "Иванов", "Иванович", 1, 25623f);
+        empl[1] = new Employee("Петр", "Петров", "Петрович", 2, 31450f);
+        empl[2] = new Employee("Сидор", "Сидоров", "Сидорович", 3, 40200f);
+        empl[3] = new Employee("Егор", "Егоров", "Егорович", 4, 50400f);
+        empl[4] = new Employee("Павел", "Павлов", "Павлович", 5, 12000f);
 
         for (Employee e : empl) {
             System.out.println(e);
+
         }
+
+        System.out.println("Зарплата минимальная " + minOfSalary(empl));
+
+        System.out.println("Зарплата максимальная " + maxOfSalary(empl));
     }
 
     public static double minOfSalary(Employee[] arr) {
@@ -38,5 +43,10 @@ public class Main {
         }
         return max;
     }
-}
+
+        }
+
+
+
+
 
