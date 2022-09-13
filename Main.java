@@ -1,4 +1,6 @@
 public class Main {
+    private static Employee[] employees = new Employee[5];
+
 
     public static void main(String[] args) {
         Employee[] empl = new Employee[5];
@@ -8,6 +10,7 @@ public class Main {
         empl[3] = new Employee("Егор", "Егоров", "Егорович", 4, 50400f);
         empl[4] = new Employee("Павел", "Павлов", "Павлович", 5, 12000f);
 
+
         for (Employee e : empl) {
             System.out.println(e);
 
@@ -16,8 +19,16 @@ public class Main {
         System.out.println("Зарплата минимальная " + minOfSalary(empl));
 
         System.out.println("Зарплата максимальная " + maxOfSalary(empl));
+
+        System.out.println("Зарплата средняя " + calculateAverageSalary(empl));
     }
 
+
+    public static void printEmployees(){
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+    }
     public static double minOfSalary(Employee[] arr) {
         double min = maxOfSalary(arr);
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +54,17 @@ public class Main {
         }
         return max;
     }
-
+    public static float calculateAverageSalary(Employee[] arr){
+        int count = 0;
+        int sum = 0;
+        for (Employee employee: employees){
+            if (employee != null ){
+                count++;
+                sum += employee.getSalary();
+            }
+        }
+        return (float) sum/count;
+    }
         }
 
 

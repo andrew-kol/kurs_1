@@ -45,12 +45,12 @@ public class Employee {
     }
 
 
-    public Employee(String name, String lastName, String middleName, int dept, float salary) {
-        name = name;
-        lastName = lastName;
-        middleName = middleName;
-        department = dept;
-        salary = salary;
+    public Employee(String name,  String middleName, String lastName, int dept, float salary) {
+        this.name = name;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.department = dept;
+        this.salary = (int) salary;
         id = ++counter;
     }
 
