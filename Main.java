@@ -3,30 +3,44 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Employee[] empl = new Employee[5];
-        empl[0] = new Employee("Иван", "Иванов", "Иванович", 1, 25623f);
-        empl[1] = new Employee("Петр", "Петров", "Петрович", 2, 31450f);
-        empl[2] = new Employee("Сидор", "Сидоров", "Сидорович", 3, 40200f);
-        empl[3] = new Employee("Егор", "Егоров", "Егорович", 4, 50400f);
-        empl[4] = new Employee("Павел", "Павлов", "Павлович", 5, 12000f);
+       // Employee[] empl = new Employee[5];
+        Employee emp1 = new Employee("Иван", "Иванов", "Иванович", 1, 25623f);
+        Employee emp2 = new Employee("Петр", "Петров", "Петрович", 2, 31450f);
+        Employee emp3 = new Employee("Сидор", "Сидоров", "Сидорович", 3, 40200f);
+        Employee emp4 = new Employee("Егор", "Егоров", "Егорович", 4, 50400f);
+        Employee emp5 = new Employee("Павел", "Павлов", "Павлович", 5, 12000f);
 
-
-        for (Employee e : empl) {
+employees[0] = emp1;
+employees[1] = emp2;
+employees[2] = emp3;
+employees[3] = emp4;
+employees[4] = emp5;
+        for (Employee e : employees) {
             System.out.println(e);
 
         }
 
-        System.out.println("Зарплата минимальная " + minOfSalary(empl));
+        System.out.println("Зарплата минимальная " + minOfSalary(employees));
 
-        System.out.println("Зарплата максимальная " + maxOfSalary(empl));
+        System.out.println("Зарплата максимальная " + maxOfSalary(employees));
 
-        System.out.println("Зарплата средняя " + calculateAverageSalary(empl));
+        System.out.println("Зарплата средняя " + calculateAverageSalary(employees));
+
+       // System.out.println("Зарплата полная " + calculateTotalSalary(employees));
+
     }
 
-
+     //  public static int calculateTotalSalary(Employee[] arr){
+   // int sum = 0;
+    //for (Employee employee : employees);{
+       // sum += employee.getSalary();
+         //  }
+          // return sum;
+  //  }
     public static void printEmployees(){
         for (Employee employee : employees) {
-            System.out.println(employee);
+            System.out.println(employee) ;
+
         }
     }
     public static double minOfSalary(Employee[] arr) {
